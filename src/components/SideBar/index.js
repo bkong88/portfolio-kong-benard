@@ -11,7 +11,7 @@ export default function SideBar({ sections = [] }) {
   return (
     <div className={`${headerOpen ? 'header-visible' : ' '}`}>
       <TopNav
-        title={config.authorName}
+        title={`${config.authorGivenNames} ${config.authorSurname}`}
         onMenuClick={() => toggleHeader(!headerOpen)}
       />
       <div id="header">

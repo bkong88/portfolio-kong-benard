@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import PageFooter from '../components/PageFooter';
 import SideBar from '../components/SideBar';
+import config from '../../config'
 
 import pic2 from '../assets/images/pic02.jpg';
 import pic3 from '../assets/images/pic03.jpg';
@@ -29,11 +30,11 @@ const IndexPage = () => (
         <div className="container">
           <header>
             <h2 className="alt">
-              Hi! I'm <strong>Anubhav</strong>
+              Hi! I'm <strong>{config.authorGivenNames}</strong>
               <br />
-              Web developer
+              Full Stack Developer
             </h2>
-            <p>I have made few things check it out.</p>
+            <p>Scroll down to check out some of my projects.</p>
           </header>
 
           <footer>
@@ -51,13 +52,6 @@ const IndexPage = () => (
           <header>
             <h2>Portfolio</h2>
           </header>
-
-          <p>
-            Life will feel it is always a great need for eu valley, the valley
-            CNN ridiculous smile at any time chat mainstream clinical homes.
-            Mauris floor was very warm and we need it. One customer now nibh
-            Bureau dark pools behavior.
-          </p>
 
           <div className="row">
             <div className="col-4 col-12-mobile">
@@ -129,13 +123,8 @@ const IndexPage = () => (
           </a>
 
           <p>
-            Developers football competition in diameter big price to layer the
-            pot. Chavez ultricies care who wants to CNN. Lobortis elementum
-            aliquet eget a den of which they do not hold it in hatred developers
-            nor the mountains of the deposit slip. The element of time, sem ante
-            ullamcorper dolor nulla quam placerat viverra environment is not
-            with our customers. Free makeup and skirt until the mouse or
-            partners or to decorate each targeted.
+            I am a full stack developer based in Vancouver. I have been working in web development since 2019, and dabbling since 2017.<br />
+            I enjoy creating innovative solutions for today's problems.
           </p>
         </div>
       </section>
@@ -147,11 +136,8 @@ const IndexPage = () => (
           </header>
 
           <p>
-            The element of time, sem ante ullamcorper dolor nulla quam placerat
-            viverra environment is not with our customers. Free makeup and skirt
-            until the mouse. Japan this innovative and ultricies carton salad
-            clinical ridiculous now passes from enhanced. Mauris pot innovative
-            care for my pain.
+            Want to chat? Fill out the form below and I will email you as soon as possible.
+            <br />Alternatively, you can find me on <a href={config.urls.linkedin} target="_blank">LinkedIn</a>.
           </p>
 
           <form method="post" action="#">
