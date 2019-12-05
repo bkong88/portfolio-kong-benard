@@ -2,7 +2,6 @@ const URLS = {
   github: 'https://github.com/bkong88',
   linkedin: 'https://www.linkedin.com/in/benardkong/',
   email: 'mailto:benardkong@hotmail.com',
-
 }
 
 module.exports = {
@@ -18,26 +17,26 @@ module.exports = {
   authorSurname: 'Kong',
   authorGivenNames: 'Benard',
   heading: 'Full Stack Developer',
-  urls: {...URLS},
+  urls: { ...URLS },
   // social
   socialLinks: [
     {
       icon: 'fa-github',
       name: 'Github',
       url: URLS.github,
-      target: "_blank",
+      target: '_blank',
     },
     {
       icon: 'fa-linkedin',
       name: 'LinkedIn',
       url: URLS.linkedin,
-      target: "_blank",
+      target: '_blank',
     },
     {
       icon: 'fa-envelope-o',
       name: 'Email',
       url: URLS.email,
-      target: "",
+      target: '',
     },
   ],
-};
+}

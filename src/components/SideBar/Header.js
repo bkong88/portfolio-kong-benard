@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 
 export default function Footer({ title, heading, avatar }) {
   return (
@@ -13,5 +13,5 @@ export default function Footer({ title, heading, avatar }) {
         <p>{heading}</p>
       </Link>
     </div>
-  );
+  )
 }

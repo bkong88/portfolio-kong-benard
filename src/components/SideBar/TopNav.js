@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function TopNav({ title, onMenuClick = () => {} }) {
   return (
@@ -6,13 +6,12 @@ export default function TopNav({ title, onMenuClick = () => {} }) {
       <a
         href="/#"
         className="toggle"
-        onClick={e => {
-          e.preventDefault();
-          onMenuClick();
-        }}
-      >
+        onClick={(e) => {
+          e.preventDefault()
+          onMenuClick()
+        }}>
         {' '}
       </a>
     </div>
-  );
+  )
 }

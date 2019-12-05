@@ -1,25 +1,25 @@
-import React from 'react';
+import React from 'react'
 
-import Layout from '../components/Layout';
-import PageFooter from '../components/PageFooter';
-import SideBar from '../components/SideBar';
+import Layout from '../components/Layout'
+import PageFooter from '../components/PageFooter'
+import SideBar from '../components/SideBar'
 import config from '../../config'
 
-import pic2 from '../assets/images/pic02.jpg';
-import pic3 from '../assets/images/pic03.jpg';
-import pic4 from '../assets/images/pic04.jpg';
-import pic5 from '../assets/images/pic05.jpg';
-import pic6 from '../assets/images/pic06.jpg';
-import pic7 from '../assets/images/pic07.jpg';
-import pic8 from '../assets/images/pic08.jpg';
-import Scroll from '../components/Scroll';
+import pic2 from '../assets/images/pic02.jpg'
+import pic3 from '../assets/images/pic03.jpg'
+import pic4 from '../assets/images/pic04.jpg'
+import pic5 from '../assets/images/pic05.jpg'
+import pic6 from '../assets/images/pic06.jpg'
+import pic7 from '../assets/images/pic07.jpg'
+import pic8 from '../assets/images/pic08.jpg'
+import Scroll from '../components/Scroll'
 
 const sections = [
   { id: 'top', name: 'Intro', icon: 'fa-home' },
   { id: 'portfolio', name: 'Portfolio', icon: 'fa-th' },
   { id: 'about', name: 'About Me', icon: 'fa-user' },
   { id: 'contact', name: 'Contact', icon: 'fa-envelope' },
-];
+]
 
 const IndexPage = () => (
   <Layout>
@@ -123,8 +123,9 @@ const IndexPage = () => (
           </a>
 
           <p>
-            I am a full stack developer based in Vancouver. I have been working in web development since 2019, and dabbling since 2017.<br />
-            I enjoy creating innovative solutions for today's problems.
+            I am a full stack developer based in Vancouver. I have been working in web development since 2019, and
+            dabbling since 2017.
+            <br />I enjoy creating innovative solutions for today's problems.
           </p>
         </div>
       </section>
@@ -137,7 +138,12 @@ const IndexPage = () => (
 
           <p>
             Want to chat? Fill out the form below and I will email you as soon as possible.
-            <br />Alternatively, you can find me on <a href={config.urls.linkedin} target="_blank">LinkedIn</a>.
+            <br />
+            Alternatively, you can find me on{' '}
+            <a href={config.urls.linkedin} target="_blank">
+              LinkedIn
+            </a>
+            .
           </p>
 
           <form method="post" action="#">
@@ -162,6 +168,6 @@ const IndexPage = () => (
 
     <PageFooter />
   </Layout>
-);
+)
 
-export default IndexPage;
+export default IndexPage
