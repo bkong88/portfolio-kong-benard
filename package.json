@@ -16,6 +16,8 @@
     "gatsby-plugin-offline": "^3.0.21",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-sass": "^2.1.23",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-remark": "^2.6.39",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -24,7 +26,7 @@
     "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "build": "npm run clean && gatsby build",
     "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
@@ -33,6 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "env-cmd": "^10.0.1",
     "gh-pages": "^2.1.1",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0"
