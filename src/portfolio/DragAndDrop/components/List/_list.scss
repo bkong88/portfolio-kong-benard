@@ -1,0 +1,19 @@
+.dnd-list {
+  border: 3px dashed greenyellow;
+  height: 100%;
+
+  &:not(:last-of-type) {
+    margin-right: 2rem;
+  }
+
+  &__title {
+    border: 1px solid blueviolet;
+    margin-bottom: 1rem;
+  }
+
+  &__cards-container {
+    border: 1px solid lawngreen;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
