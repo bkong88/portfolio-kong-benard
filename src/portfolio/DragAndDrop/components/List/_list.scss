@@ -1,19 +1,59 @@
 .dnd-list {
-  border: 3px dashed greenyellow;
-  height: 100%;
+  & {
+    background-color: #eee;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow: hidden;
+    width: 240px;
 
-  &:not(:last-of-type) {
-    margin-right: 2rem;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 
   &__title {
-    border: 1px solid blueviolet;
-    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 6px 3px 3px 11px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__main-content {
+    overflow: hidden;
+    padding: 3px 3px 0 6px;
   }
 
   &__cards-container {
-    border: 1px solid lawngreen;
     max-height: 100%;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  &__add-new-card-container {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: #ddd;
+      color: #333;
+      text-decoration: underline;
+    }
+  }
+
+  &__add-new-card-icon {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+
+  &__add-new-card {
+    margin: 0;
   }
 }

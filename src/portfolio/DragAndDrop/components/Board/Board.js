@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { DragDropContext } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { createDefaultLists } from '../../fixtures/defaultLists'
 
 import List from '../List/List'
@@ -16,11 +16,15 @@ const Board = () => {
     setCardsObject(defaultLists.cardsObject)
   }, [])
 
-  const onDragEnd = () => {}
+  const onDragStart = () => {}
+
+  const onDragEnd = (results) => {
+    // console.log('results: ', results)
+  }
 
   return (
     <div className="dnd-board">
-      <DragDropContext onDragEnd={onDragEnd}>
+      <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
         {listIdsArray.map((listId) => (
           <List key={listId} {...listsObject[listId]} cardsObject={cardsObject} />
         ))}

@@ -21,9 +21,9 @@ export const createDefaultLists = () => {
   const listsArray = [list1.listId, list2.listId, list3.listId]
 
   // Add cards
-  const list1Cards = createDefaultCards(list1.listId, list1.listObject.title, 3)
-  const list2Cards = createDefaultCards(list2.listId, list2.listObject.title, 5)
-  const list3Cards = createDefaultCards(list3.listId, list3.listObject.title, 4)
+  const list1Cards = createDefaultCards(list1.listId, list1.listObject.title, 8)
+  const list2Cards = createDefaultCards(list2.listId, list2.listObject.title, 15)
+  const list3Cards = createDefaultCards(list3.listId, list3.listObject.title, 7)
 
   listsObject[list1.listId].cardIdsArray = list1Cards.cardIdsArray
   listsObject[list2.listId].cardIdsArray = list2Cards.cardIdsArray

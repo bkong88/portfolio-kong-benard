@@ -1,5 +1,8 @@
 .dnd-board {
-  border: 5px solid red;
+  align-items: flex-start;
   display: flex;
   height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px;
 }
