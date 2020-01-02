@@ -7,12 +7,18 @@
     background-color: white;
     border-radius: 3px;
     box-shadow: 0px 1px 1px rgba(#000, 0.2);
+    display: flex;
     min-height: 60px;
-    padding: 3px 8px;
+    max-height: 200px;
+    overflow: hidden;
     position: relative;
 
     &:hover {
       cursor: pointer;
+    }
+
+    &:focus-within {
+      border: 1px solid #333;
     }
 
     &--dragging {
@@ -34,7 +40,7 @@
     right: 1px;
     top: 1px;
 
-    &--dragging {
+    &--delete {
       display: block;
     }
   }
@@ -48,9 +54,25 @@
   }
 
   &__content {
+    color: #555;
+    flex: 1;
     font-size: 1rem;
-    color: #333;
+    line-height: 115%;
     margin: 0;
+    padding: 4px 8px;
     user-select: none;
+    width: 100%;
+    word-wrap: break-word;
+
+    &--textbox {
+      border: 0;
+      color: #111;
+      cursor: text;
+      outline: 0;
+      padding-right: 20px;
+      resize: none;
+      user-select: auto;
+      width: 100%;
+    }
   }
 }
