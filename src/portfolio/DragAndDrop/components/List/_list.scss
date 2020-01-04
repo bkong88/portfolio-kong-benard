@@ -13,15 +13,46 @@
     }
   }
 
+  &__title-container {
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #dbdbdb;
+    }
+  }
+
   &__title {
+    border: 1px solid blue;
     color: #333;
     font-size: $list-title-size;
     font-weight: 700;
     padding: 6px 3px 3px 11px;
+  }
+
+  &__title-icon-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2.5rem;
+  }
+
+  &__edit-icon {
+    display: none;
+    position: relative;
 
     &:hover {
-      cursor: pointer;
+      background-color: #bbb;
+      color: #666;
     }
+  }
+
+  &__title-container:hover &__edit-icon {
+    display: block;
   }
 
   &__main-content {
@@ -30,6 +61,7 @@
   }
 
   &__cards-container {
+    min-height: 2rem;
     max-height: 100%;
     overflow-x: hidden;
     //TODO: Remove error on drag

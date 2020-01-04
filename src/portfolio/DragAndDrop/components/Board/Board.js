@@ -16,6 +16,7 @@ const Board = () => {
   const [listsObject, setListsObject] = useState({})
   const [listIdsArray, setListIdsArray] = useState([])
   const [cardsObject, setCardsObject] = useState({})
+  const [editListTitleId, setEditListTitleId] = useState('')
   const [editCardId, setEditCardId] = useState('')
 
   useEffect(() => {
@@ -39,6 +40,29 @@ const Board = () => {
     // TODO: Set EditListId
   }
 
+  const removeList = (listId) => {
+    setEditListTitleId('')
+
+    setListsObject((prevListsObj) => {
+      const deepCopiedListsObj = cloneDeep(prevListsObj)
+      delete deepCopiedListsObj[listId]
+      return deepCopiedListsObj
+    })
+
+    setListIdsArray((prevListIdsArray) => prevListIdsArray.filter((listIdInArray) => listIdInArray !== listId))
+  }
+
+  const editListTitle = (listId, newTitle) => {
+    setListsObject((prevListsObj) => {
+      const deepClonedListsObj = cloneDeep(prevListsObj)
+      deepClonedListsObj[listId] = {
+        ...deepClonedListsObj[listId],
+        title: newTitle,
+      }
+      return deepClonedListsObj
+    })
+  }
+
   const addNewCard = (listId) => {
     // Create a card id and card object
     const newCardId = uuid_v1()
@@ -59,6 +83,8 @@ const Board = () => {
   }
 
   const removeCard = (cardId, listId) => {
+    // TODO: Clicking on trash won't execute this function; most likely due to html/css
+    console.log('Removing list...')
     // Stop editing current card
     setEditCardId('')
 
@@ -107,11 +133,13 @@ const Board = () => {
           <List
             key={listId}
             {...listsObject[listId]}
+            editListTitle={editListTitle}
+            removeList={removeList}
+            editListTitleId={editListTitleId}
+            setEditListTitleId={setEditListTitleId}
             cardsObject={cardsObject}
             addNewCard={addNewCard}
-            removeCard={removeCard}
-            changeCardContent={changeCardContent}
-            editCardProps={{ editCardId, setEditCardId }}
+            editCardProps={{ changeCardContent, editCardId, removeCard, setEditCardId }}
           />
         ))}
       </DragDropContext>

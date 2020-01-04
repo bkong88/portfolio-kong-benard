@@ -31,15 +31,10 @@
   }
 
   &__edit-icon {
-    background-color: rgba(#ddd, 0.2);
-    border-radius: 3px;
     display: none;
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
     position: absolute;
-    right: 1px;
-    top: 1px;
+    right: 2px;
+    top: 2px;
 
     &--delete {
       display: block;
@@ -64,17 +59,5 @@
     user-select: none;
     width: 100%;
     word-wrap: break-word;
-
-    &--textbox {
-      background-color: #fcfcfc;
-      border: 0;
-      color: #111;
-      cursor: text;
-      outline: 0;
-      padding-right: 20px;
-      resize: none;
-      user-select: auto;
-      width: 100%;
-    }
   }
 }
