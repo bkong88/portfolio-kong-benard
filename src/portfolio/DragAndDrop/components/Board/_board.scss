@@ -1,8 +1,43 @@
 .dnd-board {
   align-items: flex-start;
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 18px);
   overflow-x: auto;
   overflow-y: hidden;
   padding: 6px;
+  width: max-content;
+
+  &__add-new-list-container {
+    align-items: center;
+    background-color: #eee;
+    border-radius: 3px;
+    color: #333;
+    display: flex;
+    font-size: $list-title-size;
+    font-weight: 900;
+    overflow: hidden;
+    width: $list-width;
+
+    &:hover {
+      background-color: #ddd;
+      color: #111;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__add-new-list-icon-container {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    padding: 0 0.8rem;
+  }
+
+  &__add-new-list {
+    flex: 1;
+    line-height: 100%;
+    margin: 0;
+    padding: 9px 0;
+  }
 }

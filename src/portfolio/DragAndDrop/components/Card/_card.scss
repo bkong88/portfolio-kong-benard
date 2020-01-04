@@ -15,6 +15,7 @@
 
     &:hover {
       cursor: pointer;
+      background-color: #fafafa;
     }
 
     &:focus-within {
@@ -65,6 +66,7 @@
     word-wrap: break-word;
 
     &--textbox {
+      background-color: #fcfcfc;
       border: 0;
       color: #111;
       cursor: text;

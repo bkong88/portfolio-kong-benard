@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 
 import { MdDeleteForever, MdEdit } from 'react-icons/md'
 import classNames from 'classnames'
 
 const TextArea = ({ id, content, changeCardContent, setEditCardId }) => {
-  const [value, setValue] = useState(content)
-
   useEffect(() => {
     const enterFunction = (e) => {
       const keycode = e.keyCode ? e.keyCode : e.which
@@ -20,18 +18,14 @@ const TextArea = ({ id, content, changeCardContent, setEditCardId }) => {
     }
   }, [setEditCardId])
 
-  const handleChange = (e) => {
-    setValue(e.target.value) // Need two otherwise there's a lag time to see typed contents.
-    changeCardContent(id, e.target.value)
-  }
-
   // TODO: Change textarea height according to the content inside (probably need js/jquery to accomplish?)
+  // Check here for ideas: https://css-tricks.com/textarea-tricks/#article-header-id-6
   return (
     <textarea
       className="dnd-card__content dnd-card__content--textbox"
-      value={value}
+      value={content}
       autoFocus
-      onChange={handleChange}
+      onChange={(e) => changeCardContent(id, e.target.value)}
       onBlur={() => setEditCardId('')}
     />
   )
@@ -50,7 +44,6 @@ const Card = ({
     <Draggable draggableId={id} index={index}>
       {(provided, snapshot) => {
         const cardClassName = classNames('dnd-card', { 'dnd-card--dragging': snapshot.isDragging })
-        const editClassName = classNames('dnd-card__edit-icon')
 
         return (
           <div

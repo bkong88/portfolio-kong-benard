@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
-import { createDefaultLists } from '../../fixtures/defaultLists'
-import uuid_v1 from 'uuid/v1'
 
+// Drag/Drop
+import { DragDropContext } from 'react-beautiful-dnd'
+
+// Components
 import List from '../List/List'
+
+// utils
+import { cloneDeep } from 'lodash'
+import { createDefaultLists } from '../../fixtures/defaultLists'
+import { MdAdd } from 'react-icons/md'
+import uuid_v1 from 'uuid/v1'
 
 const Board = () => {
   const [listsObject, setListsObject] = useState({})
@@ -18,22 +25,33 @@ const Board = () => {
     setCardsObject(defaultLists.cardsObject)
   }, [])
 
+  const addNewList = () => {
+    // Create new list id and list object
+    const newListId = uuid_v1()
+    const newListObj = { id: newListId, title: 'New List Title', cardIdsArray: [] }
+
+    // Add list to listsObject
+    setListsObject((oldListsObj) => ({ ...oldListsObj, [newListId]: newListObj }))
+
+    // Push newListId to listIdsArray
+    setListIdsArray((oldListIdsArray) => [...oldListIdsArray, newListId])
+
+    // TODO: Set EditListId
+  }
+
   const addNewCard = (listId) => {
     // Create a card id and card object
     const newCardId = uuid_v1()
     const newCardObj = { id: newCardId, listId, content: 'New Card Content' }
 
     // Add card to cardsObject
-    setCardsObject((oldCardsObj) => {
-      oldCardsObj[newCardId] = newCardObj
-
-      return oldCardsObj
-    })
+    setCardsObject((oldCardsObj) => ({ ...oldCardsObj, [newCardId]: newCardObj }))
 
     // Push newCardId to listsObject[listId].cardIdsArray
     setListsObject((oldListsObj) => {
-      oldListsObj[listId].cardIdsArray.push(newCardId)
-      return oldListsObj
+      const deepCopyOldListsObj = cloneDeep(oldListsObj)
+      deepCopyOldListsObj[listId].cardIdsArray.push(newCardId)
+      return deepCopyOldListsObj
     })
 
     // setEditCardId to newCardId
@@ -46,26 +64,31 @@ const Board = () => {
 
     // Remove card from cardsObject
     setCardsObject((oldCardsObj) => {
-      delete oldCardsObj[cardId]
-      return oldCardsObj
+      const deepCopiedCardsObj = cloneDeep(oldCardsObj)
+      delete deepCopiedCardsObj[cardId]
+      return deepCopiedCardsObj
     })
 
     // Remove cardId from listsObject[listId].cardIdsArray
     setListsObject((oldListsObj) => {
-      const newCardIdsArray = oldListsObj[listId].cardIdsArray.filter((cardIdFromArray) => cardIdFromArray !== cardId)
-      oldListsObj[listId].cardIdsArray = newCardIdsArray
+      const deepCopiedListsObj = cloneDeep(oldListsObj)
+      const newCardIdsArray = deepCopiedListsObj[listId].cardIdsArray.filter(
+        (cardIdFromArray) => cardIdFromArray !== cardId
+      )
+      deepCopiedListsObj[listId].cardIdsArray = newCardIdsArray
 
-      return oldListsObj
+      return deepCopiedListsObj
     })
   }
 
   const changeCardContent = (cardId, newContent) => {
     setCardsObject((oldCardsObject) => {
-      oldCardsObject[cardId] = {
-        ...oldCardsObject[cardId],
+      const deepCopiedCardsObj = cloneDeep(oldCardsObject)
+      deepCopiedCardsObj[cardId] = {
+        ...deepCopiedCardsObj[cardId],
         content: newContent,
       }
-      return { ...oldCardsObject }
+      return deepCopiedCardsObj
     })
   }
 
@@ -92,6 +115,12 @@ const Board = () => {
           />
         ))}
       </DragDropContext>
+      <div className="dnd-board__add-new-list-container" onClick={addNewList}>
+        <div className="dnd-board__add-new-list-icon-container">
+          <MdAdd className="dnd-board__add-new-list-icon" />
+        </div>
+        <p className="dnd-board__add-new-list">Add new list</p>
+      </div>
     </div>
   )
 }
