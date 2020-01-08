@@ -43,6 +43,13 @@ const Board = () => {
   const removeList = (listId) => {
     setEditListTitleId('')
 
+    // Remove cards from cardsObj which are in listsObj[listId].cardIdsArray
+    setCardsObject((prevCardsObj) => {
+      const deepCopiedCardsObj = cloneDeep(prevCardsObj)
+      listsObject[listId].cardIdsArray.forEach((currentCardId) => delete deepCopiedCardsObj[currentCardId])
+      return deepCopiedCardsObj
+    })
+
     setListsObject((prevListsObj) => {
       const deepCopiedListsObj = cloneDeep(prevListsObj)
       delete deepCopiedListsObj[listId]
@@ -83,8 +90,6 @@ const Board = () => {
   }
 
   const removeCard = (cardId, listId) => {
-    // TODO: Clicking on trash won't execute this function; most likely due to html/css
-    console.log('Removing list...')
     // Stop editing current card
     setEditCardId('')
 
