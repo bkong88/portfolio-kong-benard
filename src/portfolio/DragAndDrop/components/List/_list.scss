@@ -57,16 +57,16 @@
   }
 
   &__main-content {
+    display: flex; // Required so Chrome will register an actual 'height' for this in order to scroll
     overflow: hidden;
     padding: 3px 3px 0 6px;
   }
 
   &__cards-container {
+    flex: 1;
     min-height: 2rem;
-    max-height: 100%;
     overflow-x: hidden;
     //TODO: Remove error on drag
-    //TODO: Scroll not working on Chrome
     //TODO: Use modern scroll bar
     overflow-y: scroll;
   }
