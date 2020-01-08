@@ -17,33 +17,34 @@
     position: relative;
 
     &:hover {
-      cursor: pointer;
       background-color: #dbdbdb;
+      cursor: pointer;
     }
   }
 
   &__title {
-    border: 1px solid blue;
     color: #333;
     font-size: $list-title-size;
     font-weight: 700;
     padding: 6px 3px 3px 11px;
-  }
 
-  &__title-icon-container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 2.5rem;
+    &--text-entry {
+      background-color: #dbdbdb;
+      height: 100%;
+      padding-bottom: 0;
+      padding-right: 35px;
+    }
   }
 
   &__edit-icon {
     display: none;
-    position: relative;
+    position: absolute;
+    right: 7px;
+    top: 8px;
+
+    &--delete {
+      display: block;
+    }
 
     &:hover {
       background-color: #bbb;
