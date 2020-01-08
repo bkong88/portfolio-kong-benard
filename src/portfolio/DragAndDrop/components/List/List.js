@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // Drag and Drop Components
 import { Droppable } from 'react-beautiful-dnd'
@@ -22,22 +22,42 @@ const List = ({
   addNewCard,
   editCardProps,
 }) => {
+  const [isBeingDeleted, setIsBeingDeleted] = useState(false)
+
+  const handleDeleteClick = () => {
+    if (!isBeingDeleted) setIsBeingDeleted(true)
+  }
+
   return (
     <div className="dnd-list">
-      <div className="dnd-list__title-container" onClick={() => setEditListTitleId(id)}>
-        {editListTitleId !== id && <h1 className="dnd-list__title">{title}</h1>}
-        {editListTitleId === id && (
-          <TextEntry id={id} content={title} handleChange={editListTitle} setEditContentId={setEditListTitleId} />
+      <div className="dnd-list__title-container">
+        {editListTitleId !== id && (
+          <React.Fragment>
+            <h1 className="dnd-list__title" onClick={() => setEditListTitleId(id)}>
+              {title}
+            </h1>
+            <MdEdit className="dnd-list__edit-icon dnd-edit-icon" onClick={() => setEditListTitleId(id)} />
+          </React.Fragment>
         )}
-        <div className="dnd-list__title-icon-container">
-          {editListTitleId !== id && <MdEdit className="dnd-list__edit-icon edit-icon" />}
-          {editListTitleId === id && (
-            <MdDeleteForever
-              className="dnd-list__edit-icon dnd-list__edit-icon--delete edit-icon"
-              onClick={() => removeList(id)}
+        {editListTitleId === id && (
+          <React.Fragment>
+            <TextEntry
+              className="dnd-list__title dnd-list__title--text-entry"
+              id={id}
+              content={title}
+              handleChange={editListTitle}
+              setEditContentId={setEditListTitleId}
+              isBeingDeleted={isBeingDeleted}
             />
-          )}
-        </div>
+            <MdDeleteForever
+              className="dnd-list__edit-icon dnd-list__edit-icon--delete dnd-edit-icon"
+              onClick={() => removeList(id)}
+              onMouseDown={handleDeleteClick}
+              onMouseLeave={() => setIsBeingDeleted(false)}
+            />
+          </React.Fragment>
+        )}
+        <div className="dnd-list__title-icon-container"></div>
       </div>
       <div className="dnd-list__main-content">
         <Droppable droppableId={id}>
