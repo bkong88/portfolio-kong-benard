@@ -73,11 +73,9 @@ const List = ({
           }}
         </Droppable>
       </div>
-      <div className="dnd-list__add-new-card-container">
+      <div className="dnd-list__add-new-card-container" onClick={() => addNewCard(id)}>
         <MdAdd className="dnd-list__add-new-card-icon" />
-        <p className="dnd-list__add-new-card" onClick={() => addNewCard(id)}>
-          Add new card
-        </p>
+        <p className="dnd-list__add-new-card">Add new card</p>
       </div>
     </div>
   )
