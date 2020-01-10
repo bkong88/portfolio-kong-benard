@@ -1,6 +1,7 @@
 .dnd-card {
   &__wrapper {
     margin-bottom: 6px;
+    margin-right: 6px; // Looks weird on Firefox but perfect on Chrome (because Firefox doesn't have modern scrollbar feature)
   }
 
   & {

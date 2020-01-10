@@ -59,7 +59,7 @@
   &__main-content {
     display: flex; // Required so Chrome will register an actual 'height' for this in order to scroll
     overflow: hidden;
-    padding: 3px 3px 0 6px;
+    padding: 3px 0 0 6px;
   }
 
   &__cards-container {
@@ -67,8 +67,9 @@
     min-height: 2rem;
     overflow-x: hidden;
     //TODO: Remove error on drag
-    //TODO: Use modern scroll bar
-    overflow-y: scroll;
+    overflow-y: auto; // Looks weird on Firefox but perfect on Chrome (because Firefox doesn't have modern scrollbar feature)
+
+    @include dnd-modern-scrollbar();
   }
 
   &__add-new-card-container {
