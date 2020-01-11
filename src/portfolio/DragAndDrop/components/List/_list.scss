@@ -66,7 +66,7 @@
     flex: 1;
     min-height: 2rem;
     overflow-x: hidden;
-    //TODO: Remove error on drag
+    //FIXME: unsupported nested scroll container // Note: Issue is unsupported but plans for supporting it in future: https://github.com/atlassian/react-beautiful-dnd/issues/131
     overflow-y: auto; // Looks weird on Firefox but perfect on Chrome (because Firefox doesn't have modern scrollbar feature)
 
     @include dnd-modern-scrollbar();

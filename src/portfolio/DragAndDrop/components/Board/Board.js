@@ -128,7 +128,56 @@ const Board = () => {
   }
 
   const onDragEnd = (results) => {
-    // console.log('results: ', results)
+    const { source, destination } = results
+
+    // User drops Draggable outside a valid Droppable
+    if (!destination) return
+
+    // User drops Draggable inside the same Droppable as its origin
+    if (source.droppableId === destination.droppableId) {
+      // User drops Draggable in the exact same position
+      if (source.index === destination.index) return
+      // User drops Draggable in another position
+      else {
+        const listId = source.droppableId
+        const newListObj = cloneDeep(listsObject[listId])
+        const newCardIdsArray = [...newListObj.cardIdsArray]
+
+        // Remove source.index's Id
+        const [cardId] = newCardIdsArray.splice(source.index, 1)
+        // Insert in destination.index's position
+        newCardIdsArray.splice(destination.index, 0, cardId)
+
+        newListObj.cardIdsArray = newCardIdsArray
+
+        setListsObject((prevListsObj) => ({ ...prevListsObj, [listId]: newListObj }))
+      }
+    }
+    // User Drops Draggable inside a different Droppable from its origin
+    else {
+      const sourceListId = source.droppableId
+      const newSourceListObj = cloneDeep(listsObject[sourceListId])
+      const newSourceCardIdsArray = [...newSourceListObj.cardIdsArray]
+
+      const destinationListId = destination.droppableId
+      const newDestinationListObj = cloneDeep(listsObject[destinationListId])
+      const newDestinationCardIdsArray = [...newDestinationListObj.cardIdsArray]
+
+      // Remove source.index's Id from newSourceCardIdsArray
+      const [cardId] = newSourceCardIdsArray.splice(source.index, 1)
+      // Insert in destination.index's position inside newDestinationCardIdsArray
+      newDestinationCardIdsArray.splice(destination.index, 0, cardId)
+
+      // Replace both cardIdsArrays of both list objects
+      newSourceListObj.cardIdsArray = newSourceCardIdsArray
+      newDestinationListObj.cardIdsArray = newDestinationCardIdsArray
+
+      setListsObject((prevListsObj) => ({
+        ...prevListsObj,
+        [sourceListId]: newSourceListObj,
+        [destinationListId]: newDestinationListObj,
+      }))
+    }
   }
 
   return (
