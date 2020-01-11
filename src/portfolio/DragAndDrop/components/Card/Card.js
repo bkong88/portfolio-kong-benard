@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+
+// Drag and Drop Components
 import { Draggable } from 'react-beautiful-dnd'
 
+// Components
 import TextEntry from '../TextEntry/TextEntry'
 
+// Utils
 import { MdDeleteForever, MdEdit } from 'react-icons/md'
 import classNames from 'classnames'
 

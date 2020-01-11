@@ -1,11 +1,18 @@
 .dnd-board {
-  align-items: flex-start;
-  display: flex;
-  height: calc(100vh - 18px);
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 6px;
-  width: max-content;
+  & {
+    align-items: flex-start;
+    display: flex;
+    height: calc(100vh - 18px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 6px 0 6px;
+    width: max-content;
+  }
+
+  &__all-lists-container {
+    display: flex;
+    height: 100%;
+  }
 
   &__add-new-list-container {
     align-items: center;
@@ -39,5 +46,6 @@
     line-height: 100%;
     margin: 0;
     padding: 9px 0;
+    user-select: none;
   }
 }

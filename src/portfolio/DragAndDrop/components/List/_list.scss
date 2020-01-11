@@ -1,4 +1,8 @@
 .dnd-list {
+  &__wrapper {
+    margin-right: 1rem;
+  }
+
   & {
     background-color: #eee;
     border-radius: 6px;
@@ -8,8 +12,10 @@
     overflow: hidden;
     width: $list-width;
 
-    &:not(:last-child) {
-      margin-right: 1rem;
+    &--dragging {
+      box-shadow: 9px 12px 4px rgba(#000, 0.4);
+      transform: rotate(2deg) scale(1.03);
+      transition: 0.1s;
     }
   }
 
@@ -27,6 +33,7 @@
     font-size: $list-title-size;
     font-weight: 700;
     padding: 6px 3px 3px 11px;
+    user-select: none;
 
     &--text-entry {
       background-color: #dbdbdb;

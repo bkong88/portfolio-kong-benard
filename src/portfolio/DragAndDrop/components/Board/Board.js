@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-// Drag/Drop
-import { DragDropContext } from 'react-beautiful-dnd'
+// Drag and Drop Components
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
 // Components
 import List from '../List/List'
 
-// utils
+// Utils
 import { cloneDeep } from 'lodash'
 import { createDefaultLists } from '../../fixtures/defaultLists'
 import { MdAdd } from 'react-icons/md'
@@ -128,82 +128,110 @@ const Board = () => {
   }
 
   const onDragEnd = (results) => {
-    const { source, destination } = results
+    const { source, destination, type } = results
 
     // User drops Draggable outside a valid Droppable
     if (!destination) return
 
-    // User drops Draggable inside the same Droppable as its origin
-    if (source.droppableId === destination.droppableId) {
+    if (type === 'list') {
+      // List is being dragged
+
       // User drops Draggable in the exact same position
       if (source.index === destination.index) return
+
       // User drops Draggable in another position
-      else {
-        const listId = source.droppableId
-        const newListObj = cloneDeep(listsObject[listId])
-        const newCardIdsArray = [...newListObj.cardIdsArray]
+      const clonedListIdsArray = [...listIdsArray]
 
-        // Remove source.index's Id
-        const [cardId] = newCardIdsArray.splice(source.index, 1)
-        // Insert in destination.index's position
-        newCardIdsArray.splice(destination.index, 0, cardId)
+      // Remove source.index's Id
+      const [draggedListId] = clonedListIdsArray.splice(source.index, 1)
+      // Insert in destination.index's position
+      clonedListIdsArray.splice(destination.index, 0, draggedListId)
 
-        newListObj.cardIdsArray = newCardIdsArray
+      setListIdsArray(clonedListIdsArray)
+    } else {
+      // Card is being dragged
 
-        setListsObject((prevListsObj) => ({ ...prevListsObj, [listId]: newListObj }))
+      // User drops Draggable inside the same Droppable as its origin
+      if (source.droppableId === destination.droppableId) {
+        // User drops Draggable in the exact same position
+        if (source.index === destination.index) return
+        // User drops Draggable in another position
+        else {
+          const listId = source.droppableId
+          const newListObj = cloneDeep(listsObject[listId])
+          const newCardIdsArray = [...newListObj.cardIdsArray]
+
+          // Remove source.index's Id
+          const [cardId] = newCardIdsArray.splice(source.index, 1)
+          // Insert in destination.index's position
+          newCardIdsArray.splice(destination.index, 0, cardId)
+
+          newListObj.cardIdsArray = newCardIdsArray
+
+          setListsObject((prevListsObj) => ({ ...prevListsObj, [listId]: newListObj }))
+        }
       }
-    }
-    // User Drops Draggable inside a different Droppable from its origin
-    else {
-      const sourceListId = source.droppableId
-      const newSourceListObj = cloneDeep(listsObject[sourceListId])
-      const newSourceCardIdsArray = [...newSourceListObj.cardIdsArray]
+      // User Drops Draggable inside a different Droppable from its origin
+      else {
+        const sourceListId = source.droppableId
+        const newSourceListObj = cloneDeep(listsObject[sourceListId])
+        const newSourceCardIdsArray = [...newSourceListObj.cardIdsArray]
 
-      const destinationListId = destination.droppableId
-      const newDestinationListObj = cloneDeep(listsObject[destinationListId])
-      const newDestinationCardIdsArray = [...newDestinationListObj.cardIdsArray]
+        const destinationListId = destination.droppableId
+        const newDestinationListObj = cloneDeep(listsObject[destinationListId])
+        const newDestinationCardIdsArray = [...newDestinationListObj.cardIdsArray]
 
-      // Remove source.index's Id from newSourceCardIdsArray
-      const [cardId] = newSourceCardIdsArray.splice(source.index, 1)
-      // Insert in destination.index's position inside newDestinationCardIdsArray
-      newDestinationCardIdsArray.splice(destination.index, 0, cardId)
+        // Remove source.index's Id from newSourceCardIdsArray
+        const [cardId] = newSourceCardIdsArray.splice(source.index, 1)
+        // Insert in destination.index's position inside newDestinationCardIdsArray
+        newDestinationCardIdsArray.splice(destination.index, 0, cardId)
 
-      // Replace both cardIdsArrays of both list objects
-      newSourceListObj.cardIdsArray = newSourceCardIdsArray
-      newDestinationListObj.cardIdsArray = newDestinationCardIdsArray
+        // Replace both cardIdsArrays of both list objects
+        newSourceListObj.cardIdsArray = newSourceCardIdsArray
+        newDestinationListObj.cardIdsArray = newDestinationCardIdsArray
 
-      setListsObject((prevListsObj) => ({
-        ...prevListsObj,
-        [sourceListId]: newSourceListObj,
-        [destinationListId]: newDestinationListObj,
-      }))
+        setListsObject((prevListsObj) => ({
+          ...prevListsObj,
+          [sourceListId]: newSourceListObj,
+          [destinationListId]: newDestinationListObj,
+        }))
+      }
     }
   }
 
   return (
-    <div className="dnd-board">
-      <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
-        {listIdsArray.map((listId) => (
-          <List
-            key={listId}
-            {...listsObject[listId]}
-            editListTitle={editListTitle}
-            removeList={removeList}
-            editListTitleId={editListTitleId}
-            setEditListTitleId={setEditListTitleId}
-            cardsObject={cardsObject}
-            addNewCard={addNewCard}
-            editCardProps={{ changeCardContent, editCardId, removeCard, setEditCardId }}
-          />
-        ))}
-      </DragDropContext>
-      <div className="dnd-board__add-new-list-container" onClick={addNewList}>
-        <div className="dnd-board__add-new-list-icon-container">
-          <MdAdd className="dnd-board__add-new-list-icon" />
+    <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
+      <div className="dnd-board">
+        <Droppable droppableId="all-lists" direction="horizontal" type="list">
+          {(provided) => (
+            <div className="dnd-board__all-lists-container" ref={provided.innerRef} {...provided.droppableProps}>
+              {listIdsArray.map((listId, index) => (
+                <List
+                  key={listId}
+                  draggableId={listId}
+                  draggableIndex={index}
+                  {...listsObject[listId]}
+                  editListTitle={editListTitle}
+                  removeList={removeList}
+                  editListTitleId={editListTitleId}
+                  setEditListTitleId={setEditListTitleId}
+                  cardsObject={cardsObject}
+                  addNewCard={addNewCard}
+                  editCardProps={{ changeCardContent, editCardId, removeCard, setEditCardId }}
+                />
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+        <div className="dnd-board__add-new-list-container" onClick={addNewList}>
+          <div className="dnd-board__add-new-list-icon-container">
+            <MdAdd className="dnd-board__add-new-list-icon" />
+          </div>
+          <p className="dnd-board__add-new-list">Add new list</p>
         </div>
-        <p className="dnd-board__add-new-list">Add new list</p>
       </div>
-    </div>
+    </DragDropContext>
   )
 }
 
