@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 // Drag and Drop Components
 import { Droppable, Draggable } from 'react-beautiful-dnd'
@@ -94,6 +95,21 @@ const List = ({
       }}
     </Draggable>
   )
+}
+
+List.propTypes = {
+  draggableId: PropTypes.string.isRequired,
+  draggableIndex: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  cardIdsArray: PropTypes.arrayOf(PropTypes.string).isRequired,
+  editListTitle: PropTypes.func.isRequired,
+  removeList: PropTypes.func.isRequired,
+  editListTitleId: PropTypes.string.isRequired,
+  setEditListTitleId: PropTypes.func.isRequired,
+  cardsObject: PropTypes.object.isRequired,
+  addNewCard: PropTypes.func.isRequired,
+  editCardProps: PropTypes.object.isRequired,
 }
 
 export default List

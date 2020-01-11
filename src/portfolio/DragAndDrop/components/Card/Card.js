@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 // Drag and Drop Components
 import { Draggable } from 'react-beautiful-dnd'
@@ -68,6 +69,19 @@ const Card = ({
       }}
     </Draggable>
   )
+}
+
+Card.propTypes = {
+  id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  listId: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  editCardProps: PropTypes.exact({
+    changeCardContent: PropTypes.func,
+    editCardId: PropTypes.string,
+    removeCard: PropTypes.func,
+    setEditCardId: PropTypes.func,
+  }).isRequired,
 }
 
 export default Card
