@@ -1,14 +1,14 @@
 {
   "name": "gatsby-starter-prologue",
   "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Prologue by HTML5 UP",
+  "description": "Professional Portfolio Page for Benard Kong",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-prologue.git"
+    "url": "git+https://github.com/bkong88/portfolio-kong-benard.git"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "Benard Kong",
+    "email": "benardkong@hotmail.com"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -54,5 +54,5 @@
   "bugs": {
     "url": "https://github.com/anubhavsrivastava/gatsby-starter-prologue/issues"
   },
-  "homepage": "https://github.com/anubhavsrivastava/gatsby-starter-prologue#readme"
+  "homepage": "https://www.bkong.dev"
 }
