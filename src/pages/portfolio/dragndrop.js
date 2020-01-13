@@ -1,4 +1,5 @@
 import React from 'react'
 import DragAndDrop from '../../portfolio/DragAndDrop/DragAndDrop'
+import { withSidebar } from '../../hoc/withSidebar'
 
-export default () => <DragAndDrop />
+export default withSidebar(DragAndDrop)
