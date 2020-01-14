@@ -573,7 +573,8 @@
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 375px;
+    width: 375px;
+    z-index: 1;
 
 		.top {
 			@include vendor('flex-grow', '1');
