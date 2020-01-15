@@ -56,11 +56,11 @@ const IndexPage = () => (
           <div className="row">
             <div className="col-4 col-12-mobile">
               <article className="item">
-                <a href="/#" className="image fit">
-                  <img src={pic2} alt="" />
+                <a href="/portfolio/dragndrop" className="image fit">
+                  <img src={pic2} alt="Drag and Drop Thumbnail" />
                 </a>
                 <header>
-                  <h3>Ipsum Feugiat</h3>
+                  <h3>Drag and Drop</h3>
                 </header>
               </article>
               <article className="item">

@@ -6,7 +6,7 @@ export const withSidebar = (WrappedComponent) => {
   const WithSidebar = (props) => {
     return (
       <Layout>
-        <SideBar sections={[{ id: 'portfolio', name: 'Back to Portfolio', icon: 'fa-home' }]} />
+        <SideBar sections={[{ id: 'portfolio', name: 'Back to Portfolio', icon: 'fa-home' }]} scroll={false} />
         <div id="main">
           <WrappedComponent {...props} />
         </div>
