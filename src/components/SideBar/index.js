@@ -6,7 +6,7 @@ import TopNav from './TopNav'
 import config from '../../../config'
 const pic = require('../../assets/images/avatar.png')
 
-export default function SideBar({ sections = [] }) {
+export default function SideBar({ scrollSpy = true, sections = [] }) {
   const [headerOpen, toggleHeader] = useState(false)
   return (
     <div className={`${headerOpen ? 'header-visible' : ' '}`}>
@@ -17,7 +17,7 @@ export default function SideBar({ sections = [] }) {
       <div id="header">
         <div className="top">
           <Header avatar={pic} title={config.authorName} heading={config.heading} />
-          <Nav sections={sections} />
+          <Nav scrollSpy={scrollSpy} sections={sections} />
         </div>
         <Footer socialLinks={config.socialLinks} />
       </div>
