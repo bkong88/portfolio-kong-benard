@@ -10,7 +10,7 @@ const sections = [
   },
   {
     id: 'see-source-code',
-    url: 'https://www.github.com/', // TODO: fill this properly
+    url: 'https://github.com/bkong88/portfolio-kong-benard/tree/master/src/portfolio/DragAndDrop',
     icon: 'fa-file-code-o',
     name: 'Source Code',
   },
