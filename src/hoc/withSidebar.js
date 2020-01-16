@@ -2,11 +2,11 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 import Layout from '../components/Layout'
 
-export const withSidebar = (WrappedComponent) => {
+export const withSidebar = (WrappedComponent, sideBarAdditionalProps) => {
   const WithSidebar = (props) => {
     return (
       <Layout>
-        <SideBar sections={[{ id: 'portfolio', name: 'Back to Portfolio', icon: 'fa-home' }]} scroll={false} />
+        <SideBar {...sideBarAdditionalProps} />
         <div id="main">
           <WrappedComponent {...props} />
         </div>
