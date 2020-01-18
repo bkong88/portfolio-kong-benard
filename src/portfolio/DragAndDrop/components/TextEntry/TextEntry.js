@@ -28,12 +28,13 @@ const TextEntry = ({ className, id, content, handleChange, setEditContentId, isB
     <div className="text-entry__container">
       {!isTextArea && (
         <input
-          type="text"
           className={classNames(className, 'text-entry')}
+          type="text"
           value={content}
           autoFocus
-          onChange={(e) => handleChange(id, e.target.value)}
           onBlur={() => setIsFocused(false)}
+          onChange={(e) => handleChange(id, e.target.value)}
+          onFocus={(e) => e.target.select()}
         />
       )}
       {isTextArea && (
@@ -41,8 +42,9 @@ const TextEntry = ({ className, id, content, handleChange, setEditContentId, isB
           className={classNames(className, 'text-entry')}
           value={content}
           autoFocus
-          onChange={(e) => handleChange(id, e.target.value)}
           onBlur={() => setIsFocused(false)}
+          onChange={(e) => handleChange(id, e.target.value)}
+          onFocus={(e) => e.target.select()}
         />
       )}
     </div>
