@@ -56,16 +56,16 @@ const IndexPage = ({ location, navigate }) => {
                 <br />
                 Full Stack Developer
               </h2>
-              <p>Scroll down to check out some of my projects.</p>
+              <p>
+                I am a full stack developer based in Vancouver. I have been working in web development since 2019, and
+                dabbling since 2017. I enjoy solving interesting problems and building excellent products!
+              </p>
+              <p>
+                Frontend problems I have solved: easily customizable text entry component, draggable components <br />
+                Backend problems I have solved: authentication, authorization, user posts/comments
+              </p>
+              <p>Scroll down to see my portfolio!</p>
             </header>
-
-            <footer>
-              <Scroll type="id" element={'portfolio'}>
-                <a href="#portfolio" className="button">
-                  Show me
-                </a>
-              </Scroll>
-            </footer>
           </div>
         </section>
 
@@ -93,15 +93,15 @@ const IndexPage = ({ location, navigate }) => {
             <header>
               <h2>About Me</h2>
             </header>
-
-            <a href="/#" className="image featured">
-              <img src={pic8} alt="" />
-            </a>
-
+            <p>I specialize in React on the frontend, and Express on the backend.</p>
             <p>
-              I am a full stack developer based in Vancouver. I have been working in web development since 2019, and
-              dabbling since 2017.
-              <br />I enjoy creating innovative solutions for today's problems.
+              With <strong>React</strong>, I have solved problems by employing concepts such higher order components, react redux,
+              redux-thunks, custom redux middleware, and react router. I prefer to use Hooks for its legibility, but am
+              perfectly capable of using class based components as well. I have also spent dozens of hours writing unit
+              and integration tests for components using Jest and Enzyme.
+              <br />
+              With <strong>Express</strong>, I have created authentication and authorization systems by employing GraphQL and serialize.
+              This resulted in easy-to-consume queries for clients, speeding up the development process.
             </p>
           </div>
         </section>
