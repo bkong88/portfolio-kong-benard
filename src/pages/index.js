@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react'
 
+// Components
 import Layout from '../components/Layout'
-import PageFooter from '../components/PageFooter'
+import Scroll from '../components/Scroll'
 import SideBar from '../components/SideBar'
-import config from '../../config'
 
+// Data
+import config from '../../config'
+import { graphql, useStaticQuery } from 'gatsby'
+
+// Fixtures
 import dragDropThumbnail from '../assets/images/dragndrop_illustration.gif'
 import pic8 from '../assets/images/pic08.jpg'
-import Scroll from '../components/Scroll'
-import { graphql, useStaticQuery } from 'gatsby'
 
 const sections = [
   { id: 'top', name: 'Intro', icon: 'fa-home' },
   { id: 'portfolio', name: 'Portfolio', icon: 'fa-th' },
   { id: 'about', name: 'About Me', icon: 'fa-user' },
-  { id: 'contact', name: 'Contact', icon: 'fa-envelope' },
 ]
 
 const IndexPage = ({ location, navigate }) => {
@@ -103,44 +105,7 @@ const IndexPage = ({ location, navigate }) => {
             </p>
           </div>
         </section>
-
-        <section id="contact" className="four">
-          <div className="container">
-            <header>
-              <h2>Contact</h2>
-            </header>
-
-            <p>
-              Want to chat? Fill out the form below and I will email you as soon as possible.
-              <br />
-              Alternatively, you can find me on{' '}
-              <a href={config.urls.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-              .
-            </p>
-
-            <form method="post" action="#">
-              <div className="row">
-                <div className="col-6 col-12-mobile">
-                  <input type="text" name="name" placeholder="Name" />
-                </div>
-                <div className="col-6 col-12-mobile">
-                  <input type="text" name="email" placeholder="Email" />
-                </div>
-                <div className="col-12">
-                  <textarea name="message" placeholder="Message" />
-                </div>
-                <div className="col-12">
-                  <input type="submit" value="Send Message" />
-                </div>
-              </div>
-            </form>
-          </div>
-        </section>
       </div>
-
-      <PageFooter />
     </Layout>
   )
 }
