@@ -114,7 +114,7 @@ const IndexPage = ({ location, navigate }) => {
               Want to chat? Fill out the form below and I will email you as soon as possible.
               <br />
               Alternatively, you can find me on{' '}
-              <a href={config.urls.linkedin} target="_blank">
+              <a href={config.urls.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
               .

@@ -35,10 +35,15 @@ export default function Nav({ scrollSpy, sections }) {
         ) : (
           sections.map((s) => {
             const shouldOpenInNewTab = s.url.includes('http') || s.url[0] !== '/'
+            const shouldOpenInNewTabProps = {}
+            if (shouldOpenInNewTab) {
+              shouldOpenInNewTabProps.target = '_blank'
+              shouldOpenInNewTabProps.rel = 'noopener noreferrer'
+            }
 
             return (
               <li key={s.id} className="nav__item">
-                <a href={s.url} id="top-link" target={shouldOpenInNewTab ? '_blank' : ""}>
+                <a href={s.url} id="top-link" {...shouldOpenInNewTabProps}>
                   <span className={`icon ${s.icon}`}>{s.name}</span>
                 </a>
               </li>
