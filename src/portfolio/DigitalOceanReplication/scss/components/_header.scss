@@ -1,0 +1,105 @@
+.digital-ocean-header {
+  & {
+    background-color: white;
+    box-shadow: 0 0 4px $color-shadow;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 1; // Why do the arrows in .quotes have a higher z-index?
+  }
+
+  &__detailed-info {
+    border-bottom: 1px solid rgba(220, 220, 220, 0.479);
+    display: flex;
+    justify-content: space-between;
+    padding: 2px $length-xxl;
+  }
+
+  &__news {
+    align-items: center;
+    display: flex;
+  }
+
+  &__news-highlight {
+    background-color: rgb(16, 233, 233);
+    border-radius: 3px;
+    font-size: $text-xs;
+    font-weight: 400;
+    margin-right: $length-m;
+    padding: 1px $length-s;
+    text-transform: uppercase;
+  }
+
+  &__recent-news {
+    color: $text-primary;
+    font-size: $text-s;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__nav-item {
+    padding: $length-s $length-m $length-s $length-m;
+
+    &--link {
+      font-size: $text-s;
+    }
+  }
+
+  &__nav-items {
+    color: $text-primary;
+    display: flex;
+  }
+
+  &__main-nav-bar {
+    align-items: center;
+    display: flex;
+    padding: $length-s $length-xxl;
+  }
+
+  &__company-logo-container {
+    margin-right: 4rem;
+    width: 168px;
+  }
+
+  &__main-nav {
+    display: flex;
+    flex: 1 1 0;
+  }
+
+  &__main-nav-item {
+    color: $text-primary;
+    font-size: $text-sm;
+    padding: 0 $length-xs;
+    text-transform: capitalize;
+    transition: 0.3s;
+
+    &--link {
+      &:hover {
+        color: $text-cta;
+      }
+    }
+  }
+
+  &__cta {
+    background-color: white;
+    border-color: $text-cta;
+    color: $text-cta;
+    font-size: $text-sm;
+    padding: $length-s $length-l;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: $text-cta;
+      color: white;
+
+      &::selection {
+        background: $off-white;
+        color: $color-primary;
+      }
+    }
+  }
+}
