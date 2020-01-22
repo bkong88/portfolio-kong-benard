@@ -1,0 +1,12 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: $color-primary;
+  color: white;
+}

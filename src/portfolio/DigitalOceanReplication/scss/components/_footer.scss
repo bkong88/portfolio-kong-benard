@@ -1,0 +1,63 @@
+.digital-ocean-footer {
+  & {
+    background-color: #010e28;
+    color: white;
+    display: flex;
+    font-size: $text-sm;
+    justify-content: center;
+    padding: 5rem;
+    padding-bottom: 10rem;
+  }
+
+  &__main {
+    margin-right: $length-xxl;
+  }
+
+  &__logo {
+    margin-bottom: $length-l;
+  }
+
+  &__copyright {
+    margin-bottom: 5rem;
+    opacity: 0.6;
+  }
+
+  &__social-media-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__social-media-icon-container {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__social-media-icon {
+    fill: white;
+    opacity: 0.6;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__site-map {
+    display: flex;
+  }
+
+  &__nav {
+    &:not(:last-child) {
+      margin-right: $length-xxl;
+    }
+  }
+
+  &__nav-title {
+    font-weight: 400;
+    margin-bottom: $length-l;
+  }
+
+  &__link {
+    opacity: 0.8;
+  }
+}

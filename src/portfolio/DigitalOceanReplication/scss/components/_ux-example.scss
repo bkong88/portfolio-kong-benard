@@ -1,0 +1,19 @@
+.digital-ocean-ux-example {
+  & {
+    background-color: $off-white;
+    padding-bottom: 10.5rem;
+    padding-top: 9rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    margin-bottom: $length-xl;
+  }
+
+  &__text {
+    color: rgba(3, 27, 78, 0.7);
+    font-size: $text-l;
+    margin-bottom: 6.5rem;
+  }
+}

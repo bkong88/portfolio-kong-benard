@@ -1,0 +1,30 @@
+.digital-ocean-cta {
+  & {
+    align-items: center;
+    background-image: url('../assets/bg-home-welcome.jpg');
+    background-position-x: -15rem;
+    background-position-y: -54.9rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 6.5rem;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+    &::selection {
+      background: $off-white;
+      color: $color-primary;
+    }
+  }
+
+  &__button {
+    background-color: white;
+    border-radius: 4px;
+    border: 0;
+    color: $text-cta;
+    font-size: $text-m;
+    padding: $length-l 3.5rem;
+  }
+}

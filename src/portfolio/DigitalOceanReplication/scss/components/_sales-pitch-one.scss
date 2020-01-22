@@ -1,0 +1,92 @@
+.digital-ocean-sales-pitch-one {
+  & {
+    display: flex;
+    flex-direction: column;
+    font-size: $text-m;
+    padding: 10rem 0 25rem 0;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3.8rem;
+    margin-bottom: $length-l;
+  }
+
+  &__pitch {
+    color: rgba(3, 27, 78, 0.75);
+    font-size: $text-l;
+    margin-bottom: 5rem;
+  }
+
+  &__details-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90rem;
+  }
+
+  &__detail-interactive-container {
+    display: flex;
+  }
+
+  &__detail-label {
+    border-left: 2px solid darkgray;
+    color: darkgray;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    text-align: start;
+    text-transform: capitalize;
+    width: 25rem;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &__detail-radio:checked ~ &__detail-label {
+    border-left: 2px solid blue;
+    color: black;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+
+  &__pitch-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    position: absolute;
+    top: 3rem;
+    left: 30rem;
+    transition: opacity 0.25s linear;
+    visibility: hidden;
+    width: 60rem;
+  }
+
+  &__detail-radio:checked ~ &__pitch-details-container {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    visibility: visible;
+  }
+
+  &__pitch-detail-container {
+    margin: 0 0.9rem $length-xxl 0;
+    width: 28.2rem;
+  }
+
+  &__pitch-detail-icon {
+    width: 3.8rem;
+    height: auto;
+  }
+
+  &__pitch-detail-title {
+    font-size: 1.3rem;
+    margin-bottom: $length-xs;
+  }
+
+  &__pitch-detail-text {
+    max-height: 9rem;
+    overflow-y: auto;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,85 @@
+.digital-ocean-quotes {
+  & {
+    align-items: center;
+    background-color: $off-white;
+    display: flex;
+    flex-direction: column;
+    font-size: $text-m;
+    padding: 10rem 0 14rem 0;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3.7rem;
+    margin-bottom: 5rem;
+  }
+
+  &__quotes-container {
+    align-items: center;
+    display: flex;
+  }
+
+  &__previous-quote {
+    margin-right: $length-xxl;
+  }
+
+  &__next-quote {
+    margin-left: $length-xxl;
+  }
+
+  &__previous-quote--text {
+    border: solid black;
+    border-width: 0 $length-xs $length-xs 0;
+    display: inline-block;
+    padding: $length-s;
+    transform: rotate(135deg);
+  }
+
+  &__next-quote--text {
+    border: solid black;
+    border-width: 0 $length-xs $length-xs 0;
+    display: inline-block;
+    padding: $length-s;
+    transform: rotate(-45deg);
+  }
+
+  &__quote-main-container {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    max-width: 75rem;
+    padding: 3rem 5rem;
+  }
+
+  &__affiliation-logo {
+    margin-bottom: $length-xxl;
+    width: 17rem;
+  }
+
+  &__direct-quote {
+    font-size: 2.4rem;
+    font-weight: 100;
+    line-height: 4rem;
+    margin-bottom: $length-xxl;
+
+    &::before {
+      content: '“';
+    }
+    &::after {
+      content: '”';
+    }
+  }
+
+  &__quoted-by-container {
+    margin-bottom: $length-xxl;
+  }
+
+  &__quoted-by-professional-title {
+    font-size: $text-s;
+  }
+
+  &__cta {
+    color: $text-cta;
+  }
+}

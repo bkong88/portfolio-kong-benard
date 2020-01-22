@@ -1,0 +1,49 @@
+.digital-ocean-data-centers {
+  & {
+    background-color: #031b4f;
+    background-image: url('../assets/data-center-map.svg');
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: $text-m;
+    padding: 10rem 15rem 11rem 15rem;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    margin-bottom: 4.3rem;
+    text-align: center;
+  }
+
+  &__table-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__table {
+    flex: 1;
+
+    &:not(:last-of-type) {
+      margin-right: 4.2rem;
+    }
+  }
+
+  &__table-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__city {
+    flex: 1;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  &__cta {
+    color: #00d7d2;
+
+    &:hover {
+      color: #0248ff;
+    }
+  }
+}

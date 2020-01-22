@@ -1,0 +1,112 @@
+.digital-ocean-hero {
+  & {
+    background-image: url('../assets/bg-home-welcome.jpg');
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10rem 11rem 15rem 11rem;
+  }
+
+  &__welcome {
+    color: white;
+    width: 630px;
+  }
+
+  &__title {
+    font-size: 6rem;
+    margin-bottom: $length-xxl;
+
+    &::selection {
+      background: $off-white;
+      color: $color-primary;
+    }
+  }
+
+  &__subtitle {
+    font-size: 2.5rem;
+    font-weight: 400;
+
+    &::selection {
+      background: $off-white;
+      color: $color-primary;
+    }
+  }
+}
+
+.digital-ocean-signup {
+  & {
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 4rem $length-xxl;
+    width: 320px;
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  &__input {
+    font-size: $text-m;
+    margin-bottom: $length-xl;
+    padding: $length-s $length-l;
+  }
+
+  &__button {
+    border-radius: 6px;
+    border: none;
+    font-size: $text-m;
+    font-weight: 600;
+    margin-bottom: $length-m;
+    padding: 1.3rem 0;
+    transition: 0.5s;
+
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
+
+    &--submit {
+      background-color: rgb(21, 205, 114);
+      color: white;
+
+      &:hover {
+        background-color: darken(rgb(21, 205, 114), 3%);
+      }
+    }
+
+    &--google {
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 1px 2px $color-shadow;
+      color: rgb(117, 117, 117);
+      display: flex;
+      padding-left: $length-xl;
+
+      &:hover {
+        background-color: darken(white, 6%);
+      }
+    }
+  }
+
+  &__button-logo {
+    margin-right: $length-l;
+    width: $length-xl;
+    height: auto;
+  }
+
+  &__button-text {
+    font-size: inherit;
+  }
+
+  &__agreement {
+    color: $text-secondary;
+    font-size: $text-s;
+
+    &--link {
+      color: $color-primary;
+    }
+  }
+}
