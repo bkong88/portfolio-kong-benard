@@ -1,4 +1,4 @@
-import DigitalOceanReplication from '../../portfolio/DigitalOceanReplication/DigitalOceanReplication'
+import { DigitalOceanReplication } from '../../portfolio/DigitalOceanReplication/DigitalOceanReplication'
 import { withSidebar } from '../../hoc/withSidebar'
 
 const sections = [
