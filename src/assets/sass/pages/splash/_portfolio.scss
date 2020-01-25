@@ -1,0 +1,91 @@
+.portfolio {
+  &__container {
+    color: #666;
+    padding: 6rem 0;
+
+    @include breakpoint('<=narrow') {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    @include breakpoint('<=tablet') {
+      padding-bottom: 5rem;
+      padding-top: 5rem;
+    }
+
+    @include breakpoint('<=mobile-large') {
+      padding: 3rem 0;
+    }
+  }
+
+  &__title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-bottom: 5rem;
+
+    @include breakpoint('<=mobile-large') {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint('<=mobile-small') {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__header {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    text-align: left;
+
+    @include breakpoint('<=tablet') {
+      text-align: center;
+    }
+
+    @include breakpoint('<=mobile-large') {
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint('<=mobile-small') {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__item {
+    border-top: 1px solid rgba(88, 88, 88, 0.15);
+    padding: 0.8rem 4rem;
+
+    @include breakpoint('<=tablet') {
+      border: 0;
+      padding: 0 1rem;
+    }
+  }
+
+  &__image-container {
+    overflow: hidden;
+  }
+}
+
+#drag-n-drop-image {
+  @include breakpoint('<=tablet') {
+    width: 165%;
+  }
+
+  @include breakpoint('<=mobile-small') {
+    margin: 0 -15rem;
+    width: 250%;
+  }
+}
+
+#drag-n-drop-image-container {
+  @include breakpoint('<=mobile-small') {
+    height: 24rem;
+  }
+}
