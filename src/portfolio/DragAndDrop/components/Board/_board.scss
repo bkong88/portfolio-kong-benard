@@ -7,6 +7,10 @@
     overflow-y: hidden;
     padding: 6px 6px 0 6px;
     width: max-content;
+
+    @include breakpoint('<=narrower') {
+      height: calc(100vh - 68px);
+    }
   }
 
   &__all-lists-container {
@@ -24,6 +28,10 @@
     font-weight: 900;
     overflow: hidden;
     width: $list-width;
+
+    @include breakpoint('<=mobile-large') {
+      width: 75vw;
+    }
 
     &:hover {
       background-color: #ddd;
@@ -45,7 +53,13 @@
     flex: 1;
     line-height: 100%;
     margin: 0;
-    padding: 9px 0;
+    padding: 0.9rem 0;
     user-select: none;
+  }
+}
+
+@include breakpoint('<=narrower') {
+  body {
+    overflow-x: visible;
   }
 }

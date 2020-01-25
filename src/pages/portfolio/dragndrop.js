@@ -17,5 +17,6 @@ const sections = [
 ]
 const scrollSpy = false
 const withSidebarProps = { sections, scrollSpy }
+const mainDivClassNames = 'dnd-main-container'
 
-export default withSidebar(DragAndDrop, withSidebarProps)
+export default withSidebar(DragAndDrop, withSidebarProps, mainDivClassNames)

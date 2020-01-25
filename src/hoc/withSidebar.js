@@ -2,12 +2,12 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 import Layout from '../components/Layout'
 
-export const withSidebar = (WrappedComponent, sideBarAdditionalProps) => {
+export const withSidebar = (WrappedComponent, sideBarAdditionalProps, mainDivClassNames = '') => {
   const WithSidebar = (props) => {
     return (
       <Layout>
         <SideBar {...sideBarAdditionalProps} />
-        <div id="main">
+        <div id="main" className={mainDivClassNames}>
           <WrappedComponent {...props} />
         </div>
       </Layout>
