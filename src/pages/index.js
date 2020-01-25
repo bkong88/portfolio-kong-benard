@@ -48,39 +48,37 @@ const IndexPage = ({ location, navigate }) => {
       <SideBar sections={sections} />
 
       <div id="main">
-        <section id="top" className="one dark cover">
-          <div className="container">
-            <header>
-              <h2 className="alt">
-                Hi! I'm <strong>{config.authorGivenNames}</strong>
-                <br />
-                Full Stack Developer
-              </h2>
-              <p>
-                I am a full stack developer based in Vancouver. I have been working in web development since 2019, and
-                dabbling since 2017. I enjoy solving interesting problems and building excellent products!
-              </p>
-              <p>
-                Frontend problems I have solved: easily customizable text entry component, draggable components <br />
-                Backend problems I have solved: authentication, authorization, user posts/comments
-              </p>
-              <p>Scroll down to see my portfolio!</p>
-            </header>
+        <section id="top" className="top one dark cover">
+          <div className="top__container container">
+            <h1 className="top__title top__title--author-name">
+              Hi! I'm <strong>{config.authorGivenNames}</strong>
+            </h1>
+            <h1 className="top__title top__title--job">Full Stack Developer</h1>
+            <p className="top__paragraph">
+              I am a full stack developer based in Vancouver. I have been working in web development since 2019, and
+              dabbling since 2017. I enjoy solving interesting problems and building excellent products!
+            </p>
+            <p className="top__paragraph">
+              Frontend problems I have solved: easily customizable text entry component, draggable components <br />
+            </p>
+            <p className="top__paragraph">
+              Backend problems I have solved: authentication, authorization, user posts/comments
+            </p>
+            <p className="top__paragraph">Scroll down to see my portfolio!</p>
           </div>
         </section>
 
-        <section id="portfolio" className="two">
-          <div className="container">
-            <header>
-              <h2>Portfolio</h2>
-            </header>
-
-            <div className="row">
+        <section id="portfolio" className="portfolio two">
+          <div className="portfolio__container container">
+            <h2 className="portfolio__title">Portfolio</h2>
+            <div className="portfolio__row row">
               <div className="col-12 col-12-mobile">
                 <article className="portfolio__item item">
                   <h3 className="portfolio__header">Drag and Drop - ReactJS</h3>
                   <a href={dragDropPath} className="image fit">
-                    <img src={dragDropThumbnail} alt="Drag and Drop Thumbnail" />
+                    <div id="drag-n-drop-image-container" className="portfolio__image-container">
+                      <img id="drag-n-drop-image" src={dragDropThumbnail} alt="Drag and Drop Thumbnail" />
+                    </div>
                   </a>
                 </article>
               </div>
@@ -88,20 +86,20 @@ const IndexPage = ({ location, navigate }) => {
           </div>
         </section>
 
-        <section id="about" className="three">
-          <div className="container">
-            <header>
-              <h2>About Me</h2>
-            </header>
-            <p>I specialize in React on the frontend, and Express on the backend.</p>
-            <p>
-              With <strong>React</strong>, I have solved problems by employing concepts such higher order components, react redux,
-              redux-thunks, custom redux middleware, and react router. I prefer to use Hooks for its legibility, but am
-              perfectly capable of using class based components as well. I have also spent dozens of hours writing unit
-              and integration tests for components using Jest and Enzyme.
+        <section id="about" className="about-me three">
+          <div className="about-me__container container">
+            <h2 className="about-me__title">About Me</h2>
+            <p className="about-me__paragraph">I specialize in React on the frontend, and Express on the backend.</p>
+            <p className="about-me__paragraph">
+              With <strong>React</strong>, I have solved problems by employing concepts such higher order components,
+              react redux, redux-thunks, custom redux middleware, and react router. I prefer to use Hooks for its
+              legibility, but am perfectly capable of using class based components as well. I have also spent dozens of
+              hours writing unit and integration tests for components using Jest and Enzyme.
               <br />
-              With <strong>Express</strong>, I have created authentication and authorization systems by employing GraphQL and serialize.
-              This resulted in easy-to-consume queries for clients, speeding up the development process.
+              <br />
+              With <strong>Express</strong>, I have created authentication and authorization systems by employing
+              GraphQL and serialize. This resulted in easy-to-consume queries for clients, speeding up the development
+              process.
             </p>
           </div>
         </section>

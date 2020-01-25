@@ -33,9 +33,21 @@
       737px,
       960px,
     ),
-    mobile: (
+    tablet: (
       null,
-      736px,
+      768px,
+    ),
+    mobile-large: (
+      null,
+      500px,
+    ),
+    mobile-medium: (
+      null,
+      420px,
+    ),
+    mobile-small: (
+      null,
+      350px,
     ),
   )
 );
@@ -96,7 +108,7 @@ body {
     width: 100%;
   }
 
-  @include breakpoint('<=mobile') {
+  @include breakpoint('<=tablet') {
     width: 100%;
   }
 }
@@ -122,8 +134,8 @@ body {
     @include html-grid((20px, 20px), 'narrower');
   }
 
-  @include breakpoint('<=mobile') {
-    @include html-grid((20px, 20px), 'mobile');
+  @include breakpoint('<=tablet') {
+    @include html-grid((20px, 20px), 'tablet');
   }
 }
 
@@ -592,9 +604,9 @@ ul.icons {
   }
 }
 
-/* Mobile */
+/* Tablet */
 
-@include breakpoint('<=mobile') {
+@include breakpoint('<=tablet') {
   /* Basic */
 
   body,
