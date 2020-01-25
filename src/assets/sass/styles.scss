@@ -1,5 +1,7 @@
 /* Main page section */
-@import './main.scss';
+@import './main.scss'; // This should always be first
+@import './typography';
+@import '../../components/SideBar/scss/sidebarMain';
 
 /* Portfolio project imports */
 
