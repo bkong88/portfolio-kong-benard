@@ -12,6 +12,10 @@
     overflow: hidden;
     width: $list-width;
 
+    @include breakpoint('<=mobile-large') {
+      width: 75vw;
+    }
+
     &--dragging {
       box-shadow: 9px 12px 4px rgba(#000, 0.4);
       transform: rotate(2deg) scale(1.03);
@@ -32,7 +36,8 @@
     color: #333;
     font-size: $list-title-size;
     font-weight: 700;
-    padding: 6px 3px 3px 11px;
+    padding: 1.2rem 0.6rem 0.7rem 1.1rem;
+    padding-right: 3rem;
     user-select: none;
 
     &--text-entry {
@@ -45,9 +50,10 @@
 
   &__edit-icon {
     display: none;
+    font-size: $edit-icon-size;
     position: absolute;
-    right: 7px;
-    top: 8px;
+    right: 0.7rem;
+    top: 0.8rem;
 
     &--delete {
       display: block;
@@ -83,7 +89,8 @@
     align-items: center;
     cursor: pointer;
     display: flex;
-    font-size: 1rem;
+    font-size: $card-content-size;
+    padding: 1.2rem 1rem;
 
     &:hover {
       background-color: #ddd;

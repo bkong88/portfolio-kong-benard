@@ -49,7 +49,7 @@ export default function Nav({ scrollSpy, sections }) {
             <ul className="nav__list">
               <li key={s.id} className="nav__item">
                 <a href={s.url} className="nav__top-link" {...shouldOpenInNewTabProps}>
-                  <span className={`icon ${s.icon}`}>{s.name}</span>
+                  <span className={`nav__item-content icon ${s.icon}`}>{s.name}</span>
                 </a>
               </li>
             </ul>
