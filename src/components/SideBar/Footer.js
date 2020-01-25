@@ -13,8 +13,8 @@ export default function Footer({ socialLinks = [] }) {
           }
 
           return (
-            <li key={url}>
-              <a href={url} className={`icon ${icon}`} {...newTabProps}>
+            <li className="bottom__icon-container" key={url}>
+              <a href={url} className={`bottom__icon icon ${icon}`} {...newTabProps}>
                 <span className="label">{name}</span>
               </a>
             </li>

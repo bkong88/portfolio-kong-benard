@@ -1,0 +1,37 @@
+.nav {
+  &__item {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0;
+
+    &--active {
+      color: #fff;
+      background-color: rgba(17, 19, 20, 0.25);
+    }
+  }
+
+  &__top-link {
+    padding: 1.9rem 2.7rem;
+    display: flex;
+
+    text-decoration: none;
+    color: inherit;
+    @include vendor('transition', ('color 0.35s ease-in-out', 'border-bottom-color 0.35s ease-in-out'));
+    outline: 0;
+
+    &:hover {
+      color: #e27689;
+    }
+  }
+
+  &__item--active &__top-link:hover {
+    color: #fff;
+  }
+
+  &__item-content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    align-items: center;
+  }
+}

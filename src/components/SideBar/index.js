@@ -4,7 +4,7 @@ import Header from './Header'
 import Nav from './Nav'
 import TopNav from './TopNav'
 import config from '../../../config'
-const pic = require('../../assets/images/avatar.png')
+const avatarPic = require('../../assets/images/avatar.png')
 
 export default function SideBar({ scrollSpy = true, sections = [] }) {
   const [headerOpen, toggleHeader] = useState(false)
@@ -16,21 +16,11 @@ export default function SideBar({ scrollSpy = true, sections = [] }) {
       />
       <div id="header">
         <div className="top">
-          <Header avatar={pic} title={config.authorName} heading={config.heading} />
+          <Header avatar={avatarPic} title={config.authorName} heading={config.heading} />
           <Nav scrollSpy={scrollSpy} sections={sections} />
         </div>
         <Footer socialLinks={config.socialLinks} />
       </div>
-
-      {/* <section id="header">
-        <Header
-          avatar={pic}
-          title={config.authorName}
-          heading={config.heading}
-        />
-        <Nav sections={sections} />
-        <Footer socialLinks={config.socialLinks} />
-      </section> */}
     </div>
   )
 }
