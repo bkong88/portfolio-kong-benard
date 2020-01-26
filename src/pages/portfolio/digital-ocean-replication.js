@@ -17,5 +17,6 @@ const sections = [
 ]
 const scrollSpy = false
 const withSidebarProps = { sections, scrollSpy }
+const mainDivClassNames = 'digitalOcean-main-container'
 
-export default withSidebar(DigitalOceanReplication, withSidebarProps)
+export default withSidebar(DigitalOceanReplication, withSidebarProps, mainDivClassNames)

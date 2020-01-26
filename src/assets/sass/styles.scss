@@ -8,8 +8,10 @@
 @import './pages/splash/portfolio';
 @import './pages/splash/aboutMe';
 @import './pages/portfolio/dnd/dndMainContainer';
+@import './pages/portfolio/digitalOcean/digitalOceanMainContainer';
 
 /* Portfolio project imports */
 
 /* Drag And Drop Project */
 @import '../../portfolio/DragAndDrop/scss/dndStyles';
+@import '../../portfolio/DigitalOceanReplication/scss/digitalOceanStyles';

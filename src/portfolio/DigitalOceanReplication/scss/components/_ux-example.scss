@@ -4,16 +4,57 @@
     padding-bottom: 10.5rem;
     padding-top: 9rem;
     text-align: center;
+
+    @include breakpoint('<=narrow') {
+      padding: 5rem 4rem;
+    }
+
+    @include breakpoint('<=tablet') {
+      padding: 5rem 1rem;
+    }
   }
 
   &__title {
     font-size: 3.5rem;
     margin-bottom: $length-xl;
+
+    @include breakpoint('<=mobile-large') {
+      font-size: 3rem;
+    }
+
+    // Gatsby only
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
   }
 
   &__text {
     color: rgba(3, 27, 78, 0.7);
     font-size: $text-l;
     margin-bottom: 6.5rem;
+
+    @include breakpoint('<=tablet') {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    @include breakpoint('<=mobile-large') {
+      font-size: 1.8rem;
+      margin-bottom: 4rem;
+    }
+
+    @include breakpoint('<=mobile-medium') {
+      margin-bottom: 2rem;
+    }
+
+    // Gatsby only
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  &__img {
+    @include breakpoint('<=narrow') {
+      width: 100%;
+    }
   }
 }

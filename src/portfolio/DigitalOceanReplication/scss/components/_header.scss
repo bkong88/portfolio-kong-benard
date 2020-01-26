@@ -7,6 +7,10 @@
     position: sticky;
     top: 0;
     z-index: 1; // Why do the arrows in .quotes have a higher z-index?
+
+    @include breakpoint('<=tablet') {
+      display: none;
+    }
   }
 
   &__detailed-info {
@@ -29,12 +33,22 @@
     margin-right: $length-m;
     padding: 1px $length-s;
     text-transform: uppercase;
+
+    // Gatsby only
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 
   &__recent-news {
     color: $text-primary;
     font-size: $text-s;
     transition: 0.3s;
+
+    // Gatsby only
+    color: rgb(75, 75, 75);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
 
     &:hover {
       color: $color-primary;
@@ -46,6 +60,11 @@
 
     &--link {
       font-size: $text-s;
+
+      // Gatsby only
+      color: rgb(75, 75, 75);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
     }
   }
 
@@ -78,6 +97,11 @@
     transition: 0.3s;
 
     &--link {
+      // Gatsby only
+      color: rgb(75, 75, 75);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+
       &:hover {
         color: $text-cta;
       }

@@ -1,0 +1,7 @@
+.dnd-main-container {
+  margin-left: 375px !important;
+
+  @include breakpoint('<=wide') {
+    margin-left: 300px !important;
+  }
+}
