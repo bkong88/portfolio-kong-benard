@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 // Components
 import Layout from '../components/Layout'
-import Scroll from '../components/Scroll'
 import SideBar from '../components/SideBar'
 
 // Data
@@ -11,7 +10,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Fixtures
 import dragDropThumbnail from '../assets/images/dragndrop_illustration.gif'
-import pic8 from '../assets/images/pic08.jpg'
+import digitalOceanThumbnail from '../assets/images/digital_ocean_illustration.png'
 
 const sections = [
   { id: 'top', name: 'Intro', icon: 'fa-home' },
@@ -42,6 +41,7 @@ const IndexPage = ({ location, navigate }) => {
 
   const allPaths = data.allSitePage.edges.map((edge) => edge.node.path)
   const [dragDropPath] = allPaths.filter((path) => path.includes('dragndrop'))
+  const [digitalOceanPath] = allPaths.filter((path) => path.includes('digital-ocean'))
 
   return (
     <Layout>
@@ -78,6 +78,22 @@ const IndexPage = ({ location, navigate }) => {
                   <a href={dragDropPath} className="image fit">
                     <div id="drag-n-drop-image-container" className="portfolio__image-container">
                       <img id="drag-n-drop-image" src={dragDropThumbnail} alt="Drag and Drop Thumbnail" />
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+            <div className="portfolio__row row">
+              <div className="col-12 col-12-mobile">
+                <article className="portfolio__item item">
+                  <h3 className="portfolio__header">Digital Ocean Replication - HTML + SCSS</h3>
+                  <a href={digitalOceanPath} className="image fit">
+                    <div id="digital-ocean-portfolio-image-container" className="portfolio__image-container">
+                      <img
+                        id="digital-ocean-portfolio-image"
+                        src={digitalOceanThumbnail}
+                        alt="Digital Ocean Replication Thumbnail"
+                      />
                     </div>
                   </a>
                 </article>
