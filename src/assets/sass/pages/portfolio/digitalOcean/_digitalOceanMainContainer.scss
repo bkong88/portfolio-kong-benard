@@ -1,7 +1,11 @@
-.dnd-main-container {
+.digital-ocean-main-container {
   margin-left: 375px !important;
 
   @include breakpoint('<=wide') {
     margin-left: 300px !important;
+  }
+
+  @include breakpoint('<=narrower') {
+    margin-left: 0 !important;
   }
 }
