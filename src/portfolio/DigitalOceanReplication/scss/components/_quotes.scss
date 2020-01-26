@@ -7,11 +7,33 @@
     font-size: $text-m;
     padding: 10rem 0 14rem 0;
     text-align: center;
+
+    @include breakpoint('<=mobile-large') {
+      padding: 5rem 3rem;
+    }
+
+    @include breakpoint('<=mobile-medium') {
+      padding: 5rem 1rem;
+    }
   }
 
   &__title {
     font-size: 3.7rem;
     margin-bottom: 5rem;
+
+    @include breakpoint('<=mobile-large') {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint('<=mobile-medium') {
+      font-size: 2.5rem;
+    }
+
+    // Gatsby only
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
   }
 
   &__quotes-container {
@@ -21,10 +43,18 @@
 
   &__previous-quote {
     margin-right: $length-xxl;
+
+    @include breakpoint('<=mobile-medium') {
+      display: none;
+    }
   }
 
   &__next-quote {
     margin-left: $length-xxl;
+
+    @include breakpoint('<=mobile-medium') {
+      display: none;
+    }
   }
 
   &__previous-quote--text {
@@ -63,6 +93,16 @@
     line-height: 4rem;
     margin-bottom: $length-xxl;
 
+    @include breakpoint('<=mobile-large') {
+      font-size: 1.6rem;
+      line-height: normal;
+      margin-bottom: 1.2rem;
+    }
+
+    // Gatsby only
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
     &::before {
       content: '“';
     }
@@ -73,13 +113,31 @@
 
   &__quoted-by-container {
     margin-bottom: $length-xxl;
+
+    @include breakpoint('<=mobile-large') {
+      margin-bottom: 1.2rem;
+    }
+
+    // Gatsby only
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 
   &__quoted-by-professional-title {
     font-size: $text-s;
+
+    // Gatsby only
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 
   &__cta {
     color: $text-cta;
+
+    // Gatsby only
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 }

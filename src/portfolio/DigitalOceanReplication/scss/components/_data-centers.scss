@@ -1,23 +1,47 @@
 .digital-ocean-data-centers {
   & {
     background-color: #031b4f;
-    background-image: url('../assets/data-center-map.svg');
+    // background-image: url('../assets/data-center-map.svg');
     color: white;
     display: flex;
     flex-direction: column;
     font-size: $text-m;
     padding: 10rem 15rem 11rem 15rem;
+
+    @include breakpoint('<=narrow') {
+      padding: 5rem 4rem;
+    }
+
+    @include breakpoint('<=mobile-medium') {
+      padding: 5rem 1rem;
+    }
   }
 
   &__title {
     font-size: 3.6rem;
     margin-bottom: 4.3rem;
     text-align: center;
+
+    @include breakpoint('<=mobile-large') {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint('<=mobile-medium') {
+      font-size: 2.5rem;
+    }
+
+    // Gatsby only
+    font-weight: 700;
   }
 
   &__table-container {
     display: flex;
     justify-content: space-between;
+
+    @include breakpoint('<=tablet') {
+      flex-direction: column;
+    }
   }
 
   &__table {
@@ -25,12 +49,29 @@
 
     &:not(:last-of-type) {
       margin-right: 4.2rem;
+
+      @include breakpoint('<=tablet') {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint('<=mobile-medium') {
+      font-size: 1.2rem;
+    }
+
+    @include breakpoint('<=mobile-small') {
+      font-size: 1rem;
     }
   }
 
   &__table-row {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__server-code {
+    // Gatsby only
+    font-weight: 400;
   }
 
   &__city {

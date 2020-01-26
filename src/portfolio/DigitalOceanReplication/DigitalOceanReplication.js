@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
-import './scss/_digitalOceanStyles.scss'
-
 // header imports
 import digitalOceanLogo from './assets/DigitalOcean-logo.svg'
 
@@ -103,29 +101,29 @@ export const DigitalOceanReplication = () => {
           <form className="digital-ocean-signup">
             <h1 className="digital-ocean-signup__title">Deploy in seconds</h1>
             <input
-              className="digital-ocean-signup__input signup__input--email"
+              className="digital-ocean-signup__input digital-ocean-signup__input--email"
               placeholder="Email Address"
               type="email"
               name="email"
               id="email"
             />
             <input
-              className="digital-ocean-signup__input signup__input--password"
+              className="digital-ocean-signup__input digital-ocean-signup__input--password"
               placeholder="Password"
               type="password"
               name="#"
               id="#"
             />
-            <button className="digital-ocean-signup__button signup__button--submit" type="submit">
+            <button className="digital-ocean-signup__button digital-ocean-signup__button--submit" type="submit">
               Create your account
             </button>
-            <button className="digital-ocean-signup__button signup__button--google">
+            <button className="digital-ocean-signup__button digital-ocean-signup__button--google">
               <img className="digital-ocean-signup__button-logo" src={googleButtonIcon} alt="Google logo" />
               <p className="digital-ocean-signup__button-text">Sign up with Google</p>
             </button>
             <p className="digital-ocean-signup__agreement">
               By signing up you agree to the
-              <a className="digital-ocean-signup__agreement signup__agreement--link" href="#">Terms of Service</a>.
+              <a className="digital-ocean-signup__agreement digital-ocean-signup__agreement--link" href="#">&nbsp; Terms of Service</a>.
             </p>
           </form>
         </section>
@@ -573,10 +571,12 @@ export const DigitalOceanReplication = () => {
 
         <footer className="digital-ocean-footer">
           <div className="digital-ocean-footer__main">
-            <img className="digital-ocean-footer__logo" src={svg0} alt="Digital Ocean Logo" />
-            <p className="digital-ocean-footer__copyright">
-              &copy; 2019 DigitalOcean, LLC. All rights reserved.
-            </p>
+            <div className="digital-ocean-footer__company-info-container">
+              <img className="digital-ocean-footer__logo" src={svg0} alt="Digital Ocean Logo" />
+              <p className="digital-ocean-footer__copyright">
+                &copy; 2019 DigitalOcean, LLC. All rights reserved.
+              </p>
+            </div>
             <div className="digital-ocean-footer__social-media-container">
               <div className="digital-ocean-footer__social-media-icon-container">
                 <a className="digital-ocean-footer__social-media-icon-link" href="#">
