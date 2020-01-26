@@ -45,7 +45,9 @@
   }
 
   &__table {
+    display: flex;
     flex: 1;
+    flex-direction: column;
 
     &:not(:last-of-type) {
       margin-right: 4.2rem;
