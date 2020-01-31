@@ -48,6 +48,7 @@ class Layout extends Component {
                 { name: 'keywords', content: 'site, web' },
               ]}>
               <html lang="en" />
+              <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
             </Helmet>
             <div className={isPreloaded ? 'main-body is-preload' : 'main-body'}>{children}</div>
           </>
