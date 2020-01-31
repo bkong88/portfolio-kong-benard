@@ -1,0 +1,23 @@
+.url-not-found {
+  color: #000;
+  min-height: 100vh;
+  padding-top: 3rem;
+  text-align: center;
+
+  &__title {
+    font-size: 3.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__paragraph {
+    font-size: 1.8rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__to-home {
+    color: blue;
+  }
+}
