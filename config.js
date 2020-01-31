@@ -1,7 +1,6 @@
 const URLS = {
   github: 'https://github.com/bkong88',
   linkedin: 'https://www.linkedin.com/in/benardkong/',
-  email: 'mailto:benardkong@hotmail.com',
 }
 
 module.exports = {
@@ -31,12 +30,6 @@ module.exports = {
       name: 'LinkedIn',
       url: URLS.linkedin,
       target: '_blank',
-    },
-    {
-      icon: 'fa-envelope-o',
-      name: 'Email',
-      url: URLS.email,
-      target: '',
     },
   ],
 }
