@@ -1,4 +1,8 @@
 .example-form {
+  & {
+    padding: 1rem;
+  }
+
   &__title {
     font-size: 4rem;
     text-align: center;
@@ -30,8 +34,6 @@
   }
 
   &__text-entry {
-    padding: 0 2rem;
-
     &:not(:last-of-type) {
       margin-bottom: 1.5rem;
     }
