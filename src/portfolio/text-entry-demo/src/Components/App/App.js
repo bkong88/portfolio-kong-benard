@@ -1,6 +1,5 @@
 import React from 'react'
 import ExampleForm from '../ExampleForm/ExampleForm'
-import '../../scss/styles.scss'
 
 export class App extends React.Component {
   constructor(props) {

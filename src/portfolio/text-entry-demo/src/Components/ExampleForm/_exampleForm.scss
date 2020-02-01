@@ -10,11 +10,23 @@
     font-size: 4rem;
     text-align: center;
     margin-bottom: 1.5rem;
+
+    @include breakpoint('<=tablet') {
+      font-size: 3rem;
+    }
+
+    @include breakpoint('<=mobile-large') {
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__instruction-flex-container {
     display: flex;
     justify-content: center;
+
+    @include breakpoint('<=narrower') {
+      flex-direction: column;
+    }
   }
 
   &__instructions-container {
@@ -25,6 +37,18 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     margin-right: 1.5rem;
+
+    @include breakpoint('<=narrower') {
+      margin-right: 0;
+    }
+
+    @include breakpoint('<=tablet') {
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint('<=mobile-large') {
+      margin-bottom: 2rem;
+    }
   }
 
   &__todo-list-container {
@@ -35,6 +59,22 @@
   &__todo-item {
     font-size: 1.6rem;
     margin-bottom: 1rem;
+
+    @include breakpoint('<=tablet') {
+      font-size: 1.4rem;
+
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @include breakpoint('<=mobile-large') {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 3.5rem;
+      }
+    }
   }
 
   &__text-entry {
