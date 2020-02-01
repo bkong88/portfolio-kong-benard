@@ -10,6 +10,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Fixtures
 import dragDropThumbnail from '../assets/images/dragndrop_illustration.gif'
+import textEntryThumbnail from '../assets/images/textentry_illustration.gif'
 import digitalOceanThumbnail from '../assets/images/digital_ocean_illustration.png'
 
 const sections = [
@@ -41,6 +42,7 @@ const IndexPage = ({ location, navigate }) => {
 
   const allPaths = data.allSitePage.edges.map((edge) => edge.node.path)
   const [dragDropPath] = allPaths.filter((path) => path.includes('dragndrop'))
+  const [textEntryPath] = allPaths.filter((path) => path.includes('text-entry'))
   const [digitalOceanPath] = allPaths.filter((path) => path.includes('digital-ocean'))
 
   return (
@@ -78,6 +80,18 @@ const IndexPage = ({ location, navigate }) => {
                   <a href={dragDropPath} className="image fit">
                     <div id="drag-n-drop-image-container" className="portfolio__image-container">
                       <img id="drag-n-drop-image" src={dragDropThumbnail} alt="Drag and Drop Thumbnail" />
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+            <div className="portfolio__row row">
+              <div className="col-12 col-12-mobile">
+                <article className="portfolio__item item">
+                  <h3 className="portfolio__header">Customizable Text Entry Component - ReactJS</h3>
+                  <a href={textEntryPath} className="image fit">
+                    <div id="text-entry-image-container" className="portfolio__image-container">
+                      <img id="text-entry-image" src={textEntryThumbnail} alt="Text Entry Thumbnail" />
                     </div>
                   </a>
                 </article>
