@@ -57,7 +57,7 @@ const ExampleForm = () => {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <form className="example-form">
         <h1 className="example-form__title">Example Text Entries Components</h1>
         <div className="example-form__instruction-flex-container">
@@ -124,7 +124,7 @@ const ExampleForm = () => {
           value={confirmPassword}
         />
       </form>
-    </div>
+    </React.Fragment>
   )
 }
 
