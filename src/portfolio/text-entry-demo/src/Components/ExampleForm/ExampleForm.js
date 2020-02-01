@@ -61,8 +61,8 @@ const ExampleForm = () => {
       <form className="example-form">
         <h1 className="example-form__title">Example Text Entries Components</h1>
         <div className="example-form__instruction-flex-container">
+          <h2 className="example-form__instruction">List of things you can do:</h2>
           <div className="example-form__instructions-container">
-            <h2 className="example-form__instruction">List of things you can do:</h2>
             <div className="example-form__todo-list-container">
               <ul className="example-form__todo-list">
                 <li className="example-form__todo-item">
