@@ -18,7 +18,7 @@
   }
 
   &__title {
-    color: rgba(255, 255, 255, 0.85);
+    color: #333;
     font-size: 4.5rem;
     font-weight: 400;
 
@@ -43,13 +43,15 @@
     }
 
     strong {
-      color: rgba(255, 255, 255, 1);
+      color: #333;
       font-weight: 600;
     }
   }
 
   &__paragraph {
+    color: #333;
     font-size: 2.6rem;
+    font-weight: 400;
     text-align: initial;
 
     @include breakpoint('<=mobile-large') {

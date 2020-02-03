@@ -317,21 +317,8 @@ ul.icons {
     }
 
     &.dark {
-      color: #ddd;
-      color: rgba(255, 255, 255, 0.75);
-
       strong {
-        color: #fff;
         border-color: inherit;
-      }
-
-      a {
-        color: #fff;
-        border-color: inherit;
-
-        &:hover {
-          border-bottom-color: rgba(255, 255, 255, 0);
-        }
       }
     }
 
@@ -342,8 +329,33 @@ ul.icons {
     }
 
     &.one {
-      background-color: #81918e;
+      background-color: rgba(250, 250, 250, 0.6);
       background-image: url('../images/banner.jpg');
+      background-position-y: 15%;
+      background-blend-mode: overlay;
+
+      @include breakpoint('<=normal') {
+        background-size: 120%;
+        background-position-x: 5%;
+        background-position-y: 15%;
+      }
+
+      @include breakpoint('<=narrow') {
+        background-size: 200%;
+        background-position-x: center;
+      }
+
+      @include breakpoint('<=tablet') {
+        background-size: 255%;
+        background-position-x: 25%;
+        background-position-y: 40%;
+      }
+
+      @include breakpoint('<=mobile-medium') {
+        background-size: 255%;
+        background-position-x: 25%;
+        background-position-y: 75%;
+      }
     }
 
     &.two {
